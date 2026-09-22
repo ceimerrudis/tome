@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /tome/dynamic/tome
 docker build -t tome:latest .
-docker run -d \ --name tome \  -p 8080:80 \  -v "/tome:/var/www/html/data" \ tome
+docker run -d --name tome  -p 80:80 -v "/tome/persistent:/var/www/html/data" tome
 
