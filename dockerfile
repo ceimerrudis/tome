@@ -7,7 +7,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/www/tome
-COPY src/ /var/www/html
+COPY src/ /var/www/tome
 COPY apache.config /etc/apache2/sites-available/tome.lv.conf
 
 RUN mkdir -p /var/www/html/data \
