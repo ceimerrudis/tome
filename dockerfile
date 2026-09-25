@@ -7,7 +7,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/www/tome \ 
-    && chown -R www-data:www-data /var/www/tome
+    && chown -R www-data:www-data /var/www/tome \ 
+    && chmod -R 770 /var/www/tome
 COPY src/ /var/www/tome
 COPY apache.config /etc/apache2/sites-available/tome.lv.conf
 
