@@ -15,7 +15,7 @@ echo '</pre>';
     $_FILES["myFile"]["error"] == 0) {
 
     echo "inif";
-        $file_name = $target_file . $_FILES["fileToUpload"]["name"];
+        $file_name = $target_file . $_FILES["myFile"]["name"];
     
     echo "fname_got";
         if (file_exists($target_dir . $file_name)) {
@@ -23,7 +23,7 @@ echo '</pre>';
     echo "fex";
         }        
         else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            if (move_uploaded_file($_FILES["myFile"]["tmp_name"], $target_file)) {
                 echo "success";
             } 
             else {
