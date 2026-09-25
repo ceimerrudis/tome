@@ -10,6 +10,7 @@ echo '<pre>';
 print_r($_FILES);
 print_r($_SERVER);
 echo '</pre>';
+echo exec('whoami');
     echo "begin";
     if(isset($_FILES["myFile"]) && 
     $_FILES["myFile"]["error"] == 0) {
