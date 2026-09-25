@@ -11,7 +11,7 @@ COPY src/ /var/www/tome
 COPY apache.config /etc/apache2/sites-available/tome.lv.conf
 
 RUN mkdir -p /var/www/tome/data \
-    && chown -R www-data:www-data /var/www/html/data
+    && chown -R www-data:www-data /var/www/tome/data
 #aterturris viridisturris
 EXPOSE 80
 EXPOSE 443
