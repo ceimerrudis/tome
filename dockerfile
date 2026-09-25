@@ -10,7 +10,7 @@ RUN mkdir -p /var/www/tome
 COPY src/ /var/www/tome
 COPY apache.config /etc/apache2/sites-available/tome.lv.conf
 
-RUN mkdir -p /var/www/html/data \
+RUN mkdir -p /var/www/tome/data \
     && chown -R www-data:www-data /var/www/html/data
 #aterturris viridisturris
 EXPOSE 80

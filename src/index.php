@@ -3,7 +3,7 @@
 <body>
 
 <form action="/upload.php">
-  <input type="file" id="myFile" name="filename">
+  <input type="file" id="myFile" name="myFile">
   <input type="submit">
 </form>
 <?php 
