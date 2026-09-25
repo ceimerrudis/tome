@@ -11,10 +11,10 @@ RUN mkdir -p /var/www/tome
 COPY src/ /var/www/tome
 COPY apache.config /etc/apache2/sites-available/tome.lv.conf
 
+RUN mkdir -p /var/www/tome/data
+RUN chown -R www-data:www-data /var/www/tome/data
 RUN chown -R www-data:www-data /var/www/tome \
-    && mkdir -p /var/www/tome/data \
     && chmod -R 770 /var/www/tome \
-    && chown -R www-data:www-data /var/www/tome \
     && a2ensite tome.lv
 
 #aterturris viridisturris
