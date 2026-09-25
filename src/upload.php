@@ -6,7 +6,10 @@
 	$target_dir = "/var/www/tome/data/";
 	$target_file = $target_dir . "a_";
 	$uploadOk = 1;
-
+echo '<pre>';
+print_r($_FILES);
+print_r($_SERVER);
+echo '</pre>';
     echo "begin";
     if(isset($_FILES["myFile"]) && 
     $_FILES["myFile"]["error"] == 0) {
