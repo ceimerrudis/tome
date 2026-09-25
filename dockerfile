@@ -6,7 +6,7 @@ RUN apt-get update \
     && apt install openssl \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /var/www/tome 
+RUN mkdir -p /var/www/tome \ 
     && chown -R www-data:www-data /var/www/tome
 COPY src/ /var/www/tome
 COPY apache.config /etc/apache2/sites-available/tome.lv.conf
