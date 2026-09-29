@@ -1,6 +1,6 @@
 <?php
 
-$db = new PDO('sqlite:/database/app.sqlite');
+$db = new PDO('sqlite:/database/tome.sqlite');
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
