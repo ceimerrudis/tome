@@ -13,4 +13,4 @@ $db->exec("
         directory TEXT,
     )
     ");
->
+?>
