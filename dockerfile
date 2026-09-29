@@ -19,7 +19,7 @@ RUN chown -R www-data:www-data /var/www/tome \
     && chmod -R 770 /var/www/tome \
     && a2ensite tome.lv
 
-RUN mkdir -p /var/www/tome \
+RUN mkdir -p /database \
     && chown -R www-data:www-data /database \
     && chmod -R 770 /database
 
