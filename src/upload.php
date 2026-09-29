@@ -17,7 +17,7 @@
     $sub_folder = $_POST['directory'] ?? '';
 
     $target_dir = realpath($main_file_dir . $sub_folder);
-    if($target_dir === false || !str_starts_with($main_file_dir . DIRECTORY_SEPARATOR, ))
+    if($target_dir === false || !str_starts_with($main_file_dir . DIRECTORY_SEPARATOR, $target_dir))
     {
         http_response_code(400);
         exit('Invalid directory');
