@@ -62,7 +62,7 @@
 
                 $stmt->execute([
                     ':name' => $fname,
-                    ':stored_name' => $hashed_fname
+                    ':stored_name' => $hashed_fname,
                     ':directory' => $sub_folder
                 ]);
             }
