@@ -10,7 +10,7 @@ $db->exec("
         name TEXT NOT NULL,
         stored_name TEXT NOT NULL,
         uploaded_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        directory TEXT,
+        directory TEXT
     )
     ");
 ?>
