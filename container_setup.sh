@@ -2,4 +2,4 @@
 
 set -e
 php /var/www/tome/db_startup.php
-#exec apache2-foreground
+exec apache2-foreground
