@@ -10,6 +10,8 @@ RUN mkdir -p /var/www/tome
 
 COPY src/ /var/www/tome
 COPY apache.config /etc/apache2/sites-available/tome.lv.conf
+COPY php.ini /usr/local/etc/php/php.ini
+COPY container_setup.sh /container_setup.sh
 
 RUN mkdir -p /var/www/tome/data
 RUN chown -R www-data:www-data /var/www/tome/data
@@ -17,7 +19,12 @@ RUN chown -R www-data:www-data /var/www/tome \
     && chmod -R 770 /var/www/tome \
     && a2ensite tome.lv
 
+RUN mkdir -p /var/www/tome \
+    && chown -R www-data:www-data /database \
+    && chmod -R 770 /database
+
 #aterturris viridisturris
 EXPOSE 80
 EXPOSE 443
 
+ENTRYPOINT ["/container_setup.sh"]

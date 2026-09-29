@@ -3,6 +3,16 @@
 <body>
 <?php
     $status = 0;
+
+    try
+    {
+        $db = new PDO('sqlite:/database/tome.sqlite');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        echo "Database read error";
+        exit;
+    }
+
     $main_file_dir = "/var/www/tome/data/";
     $sub_folder = $_POST['directory'] ?? '';
 
@@ -45,7 +55,16 @@
     
             if($status == 0)
             {
-                //connect to SQL and save metadata like image name and folder
+                $stmt = $db->prepare("
+                    INSERT INTO files (name, stored_name, directory)
+                    VALUES (:name, :stored_name, :directory)
+                ");
+
+                $stmt->execute([
+                    ':name' => $fname,
+                    ':stored_name' => $hashed_fname
+                    ':directory' => $sub_folder
+                ]);
             }
             $status = 0;
         }

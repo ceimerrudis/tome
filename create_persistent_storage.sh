@@ -6,6 +6,8 @@
 mkdir /tome
 #make tome owned by root
 mkdir /tome/persistent
+mkdir /tome/persistent/database
+mkdir /tome/persistent/files
 
 mkdir /tome/dynamic
 #make this owned by user
