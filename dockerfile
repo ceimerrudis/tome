@@ -21,10 +21,12 @@ RUN chown -R www-data:www-data /var/www/tome \
 
 RUN mkdir -p /database \
     && chown -R www-data:www-data /database \
-    && chmod -R 770 /database
+    && chmod -R 770 /database \
+    && chown -R www-data:www-data /container_setup.sh \
+    && chmod -R 770 /container_setup.sh
 
-#aterturris viridisturris
 EXPOSE 80
 EXPOSE 443
 
 ENTRYPOINT ["/container_setup.sh"]
+#aterturris viridisturris
