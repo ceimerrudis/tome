@@ -31,7 +31,7 @@
 
     foreach($_FILES['uploaded_files']['tmp_name'] as $key => $tmpName) 
     {
-        if(&& $_FILES["uploaded_files"]["error"] == 0) 
+        if($_FILES["uploaded_files"]["error"] == 0) 
         {
             $fname = $_FILES["uploaded_files"]["name"][$key];
             $fextension = pathinfo($fname, PATHINFO_EXTENSION);
